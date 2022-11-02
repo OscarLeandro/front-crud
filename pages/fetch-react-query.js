@@ -30,7 +30,7 @@ export default function FetchReactQuery() {
   }
 
   const mutation = useMutation((body) => {
-    return postData("http://localhost:8000/api/cards", body);
+    return postData("https://card-crud.vercel.app/api/cards/", body);
   });
 
   console.log(mutation)
@@ -38,7 +38,7 @@ export default function FetchReactQuery() {
   const router = useRouter();
 
   const propsReactQuery = useQuery(["cards"], () =>
-    getData("http://localhost:8000/api/cards")
+    getData("https://card-crud.vercel.app/api/cards/")
   );
 
   const { isLoading, isError, isSuccess, data } = propsReactQuery;
